@@ -6,7 +6,6 @@ public class NotGate extends Gate {
 
     public NotGate() {
         super(1);
-
         nand = new NandGate();
     }
 
@@ -22,6 +21,7 @@ public class NotGate extends Gate {
         if (inputPin != 0) {
             throw new IndexOutOfBoundsException(inputPin);
         }
+
         nand.connect(0, emitter);
         nand.connect(1, emitter);
     }
