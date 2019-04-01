@@ -3,7 +3,7 @@ package br.pro.hashi.ensino.desagil.aps.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class XorGateTest {
+public class XorGateTest{
     private XorGate gate;
 
     private void build(boolean a, boolean b) {
