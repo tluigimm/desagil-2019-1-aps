@@ -8,7 +8,7 @@ public class OrGate extends Gate{
 
 
     public OrGate() {
-        super(4);
+        super("or", 2);
         nand1 = new NandGate();
         nand2 = new NandGate();
         nand3 = new NandGate();
@@ -38,6 +38,3 @@ public class OrGate extends Gate{
         nand3.connect(1, nand2);
     }
 }
-
-
-
