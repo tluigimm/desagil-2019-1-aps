@@ -6,7 +6,7 @@ public class AndGate extends Gate {
 
 
     public AndGate() {
-        super("AND", 2);
+        super("AND", 2, 1);
 
         nandLeft = new NandGate();
 
@@ -17,7 +17,10 @@ public class AndGate extends Gate {
 
 
     @Override
-    public boolean read() {
+    public boolean read(int outputPin) {
+        if (outputPin != 0) {
+            throw new IndexOutOfBoundsException();
+        }
         return nandRight.read();
     }
 
@@ -25,7 +28,7 @@ public class AndGate extends Gate {
     @Override
     public void connect(int inputPin, SignalEmitter emitter) {
         if (inputPin < 0 || inputPin > 1) {
-            throw new IndexOutOfBoundsException(inputPin);
+            throw new IndexOutOfBoundsException();
         }
         nandLeft.connect(inputPin, emitter);
     }

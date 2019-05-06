@@ -49,7 +49,7 @@ public class Light implements SignalReceiver {
     @Override
     public void connect(int inputPin, SignalEmitter emitter) {
         if (inputPin != 0) {
-            throw new IndexOutOfBoundsException(inputPin);
+            throw new IndexOutOfBoundsException();
         }
         this.emitter = emitter;
     }
